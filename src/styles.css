@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import 'tailwindcss';
+@theme {
+	--color-neutral-950: #0e121b;
+	--color-neutral-900: #191b25;
+	--color-neutral-800: #232530;
+	--color-neutral-700: #2b303b;
+	--color-neutral-600: #525866;
+	--color-neutral-500: #717784;
+	--color-neutral-400: #99a0ae;
+	--color-neutral-300: #cacfd8;
+	--color-neutral-200: #e0e4ea;
+	--color-neutral-100: #f3f5f8;
+	--color-neutral-50: #f5f7fa;
+	--color-neutral-0: #ffffff;
+	--color-blue-700: #2547d0;
+	--color-blue-500: #335cff;
+	--color-blue-50: #ebf1ff;
+	--color-green-500: #21c16b;
+	--color-green-100: #d1fbe9;
+	--color-red-500: #fb3748;
+	--color-red-100: #ffd5d8;
+}
+
+@layer base {
+	body {
+		font-family: 'Inter', system-ui, -apple-system, sans-serif;
+	}
+}
+
+@layer utilities {
+	.text-preset-1 {
+		font-size: 1.5rem;
+		line-height: 1.2;
+		letter-spacing: -0.03125rem;
+		font-weight: 700;
+	}
+
+	.text-preset-2 {
+		font-size: 1.25rem;
+		line-height: 1.2;
+		letter-spacing: -0.03125rem;
+		font-weight: 700;
+	}
+
+	.text-preset-3 {
+		font-size: 1rem;
+		line-height: 1.2;
+		letter-spacing: -0.01875rem;
+		font-weight: 600;
+	}
+
+	.text-preset-4 {
+		font-size: 0.875rem;
+		line-height: 1.2;
+		letter-spacing: -0.0125rem;
+		font-weight: 500;
+	}
+
+	.text-preset-5 {
+		font-size: 0.875rem;
+		line-height: 1.2;
+		letter-spacing: -0.0125rem;
+		font-weight: 400;
+	}
+
+	.text-preset-6 {
+		font-size: 0.75rem;
+		line-height: 1.2;
+		letter-spacing: -0.0125rem;
+		font-weight: 400;
+	}
+}
+mat-icon.mat-icon-no-color {
+	color: inherit !important;
+}
+/* En styles.css - Override específico para iconos custom */
+app-custom-icon mat-icon.mat-icon-no-color,
+mat-icon.mat-icon-no-color[svgIcon] {
+	color: inherit !important;
+}
+
+/* También asegurar que Tailwind funcione */
+app-custom-icon mat-icon.text-red-500 {
+	color: rgb(239 68 68) !important; /* red-500 */
+}
+
+app-custom-icon mat-icon.text-blue-500 {
+	color: rgb(59 130 246) !important; /* blue-500 */
+}
+app-custom-icon mat-icon.text-neutral-500 {
+	color: #717784 !important; /* neutral-500 */
+}
+app-custom-icon mat-icon.text-neutral-600 {
+	color: rgb(82 82 91) !important; /* neutral-600 */
+}
+app-custom-icon mat-icon.text-neutral-700 {
+	color: #2b303b !important; /* neutral-600 */
+}

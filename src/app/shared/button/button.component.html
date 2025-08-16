@@ -1,0 +1,10 @@
+<button 
+  class="btn-base"
+  [class]="customClasses"
+  [style.width]="width"
+  [style.height]="height"
+  [style.background-color]="backgroundColor"
+  [disabled]="disabled"
+  (click)="handleClick()">
+  <ng-content></ng-content>
+</button>

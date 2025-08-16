@@ -1,0 +1,99 @@
+<div
+	class="flex flex-col gap-[16px] p-[48px] bg-white rounded-[12px] shadow-lg w-full border-[1px] border-neutral-200"
+>
+	<div class="flex items-center justify-center">
+		<app-custom-icon iconName="logo" [width]="106" [height]="28" />
+	</div>
+	<div class="flex flex-col items-center gap-[8px]">
+		<p class="text-neutral-950 text-preset-1">
+			@if(isLoginMode){Welcome to Note}@else {Create Your Account}
+		</p>
+		<p class="text-neutral-600 text-preset-5">
+			@if(isLoginMode){Please log in or sign up to continue}@else{Sing up to start organizing
+			your notes and boost your productivity}
+		</p>
+	</div>
+	<div class="flex flex-col gap-[16px] w-full pt-[24px]">
+		<div class="flex flex-col gap-[6px]">
+			<label class="text-neutral-950 text-preset-4">Email Address</label>
+			<input
+				type="email"
+				placeholder="email@example.com"
+				[(ngModel)]="email"
+				class="w-full px-[12px] py-[10px] border border-neutral-300 rounded-[6px] text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-neutral-400"
+				required
+			/>
+		</div>
+
+		<div class="flex flex-col gap-[6px]">
+			<div class="flex justify-between items-center gap-[8px]">
+				<label class="text-neutral-950 text-preset-4">Password</label>
+				<a
+					href="#"
+					class="text-neutral-600 text-preset-6 hover:text-neutral-700 transition-colors duration-200"
+					>Forgot</a
+				>
+			</div>
+			<div class="relative">
+				<input
+					[type]="showPassword ? 'text' : 'password'"
+					[(ngModel)]="password"
+					class="w-full px-[12px] py-[10px] pr-[40px] border border-neutral-300 rounded-[6px] text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 hover:border-neutral-400"
+					required
+				/>
+				<button
+					type="button"
+					(click)="togglePassword()"
+					class="absolute right-[12px] top-1/2 transform -translate-y-1/2 text-neutral-500 hover:text-neutral-700 transition-colors duration-200 focus:outline-none"
+				>
+					<app-custom-icon [iconName]="showPassword ? 'hide' : 'show'" [size]="20" />
+				</button>
+			</div>
+			<div class="flex gap-[8px] items-center">
+				@if(!isLoginMode){
+				<app-custom-icon iconName="info-circle" [size]="16" color="text-neutral-600" />
+				<p class="text-neutral-600 text-preset-6">At least 8 characters</p>
+				} @if(errorMessage){
+				<p class="text-red-500 text-preset-6">{{ errorMessage }}</p>
+				}
+			</div>
+		</div>
+		@if(isLoginMode){
+		<app-button
+			(click)="login()"
+			customClasses="w-full rounded-[8px] py-[12px] px-[16px] h-[44px]"
+		>
+			<p class="text-preset-4 text-white">Login</p>
+		</app-button>
+		}@else {
+		<app-button
+			(click)="signup()"
+			customClasses="w-full rounded-[8px] py-[12px] px-[16px] h-[44px] bg-green-500 hover:bg-green-600"
+		>
+			<p class="text-preset-4 text-white">Sign Up</p>
+		</app-button>
+		}
+	</div>
+	<div class="flex flex-col gap-[16px] w-full pt-[24px]">
+		<div class="h-px bg-neutral-200 w-full"></div>
+		<p class="w-full flex justify-center text-neutral-600 text-preset-5">Or login in with:</p>
+
+		<app-button
+			customClasses="w-full rounded-[12px] py-[16px] px-[12px] flex items-center justify-center border-[1px] border-neutral-300 h-[48px]"
+			backgroundColor="white"
+		>
+			<app-custom-icon iconName="google" color="text-neutral-950" [width]="24" [height]="25" />
+			<p class="text-preset-5 text-neutral-950 px-[16px]">Google</p>
+		</app-button>
+
+		<div class="h-px bg-neutral-200 w-full"></div>
+	</div>
+
+	<p class="w-full flex justify-center text-neutral-600 text-preset-5 gap-[4px]">
+		@if(isLoginMode){ No account yet?
+		<span (click)="toggleMode()" class="cursor-pointer text-neutral-950">Sign Up</span>
+		}@else { Already have an account?
+		<span (click)="toggleMode()" class="cursor-pointer text-neutral-950">Login</span>
+		}
+	</p>
+</div>

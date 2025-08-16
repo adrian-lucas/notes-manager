@@ -1,0 +1,42 @@
+/* En tu custom-icon.component.css */
+:host {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+mat-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease-in-out;
+}
+
+/* SOLUCIÓN: Override para mat-icon-no-color */
+mat-icon.mat-icon-no-color {
+	color: inherit !important;
+}
+
+/* Hover effect */
+.icon-hover {
+	cursor: pointer;
+}
+
+.icon-hover:hover {
+	transform: scale(1.1);
+	filter: brightness(1.1);
+}
+
+/* Loading animation */
+.icon-loading {
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

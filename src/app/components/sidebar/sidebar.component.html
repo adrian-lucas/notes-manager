@@ -1,0 +1,55 @@
+<div>
+	<div class="h-[52px] py-[12px]">
+		<app-custom-icon iconName="logo" [width]="106" [height]="28"></app-custom-icon>
+	</div>
+	<div class="flex flex-col gap-[8px]">
+		<div class="flex flex-col gap-[4px]">
+			<!-- All Notes -->
+			<div [class]="getFilterClasses('all')" (click)="onFilterClick('all')">
+				<app-custom-icon iconName="home" [size]="20" [color]="getIconColor('all')">
+				</app-custom-icon>
+				<p
+					class="text-preset-4"
+					[class]="isFilterActive('all') ? 'text-blue-600' : 'text-neutral-700'"
+				>
+					All Notes
+				</p>
+			</div>
+
+			<!-- Archived Notes -->
+			<div [class]="getFilterClasses('archived')" (click)="onFilterClick('archived')">
+				<app-custom-icon iconName="archive" [size]="20" [color]="getIconColor('archived')">
+				</app-custom-icon>
+				<p
+					class="text-preset-4"
+					[class]="isFilterActive('archived') ? 'text-blue-600' : 'text-neutral-700'"
+				>
+					Archived Notes
+				</p>
+			</div>
+		</div>
+
+		<div class="h-px bg-neutral-200"></div>
+		<div><p class="text-preset-4 text-neutral-500 px-[8px] h-[20px]">Tags</p></div>
+
+		<!-- Tags List -->
+		<div class="flex flex-col gap-[4px]">
+			@for (tag of tags; track tag) {
+			<div [class]="getTagClasses(tag)" (click)="onTagClick(tag)">
+				<app-custom-icon iconName="tag" [size]="20" [color]="getTagIconColor(tag)">
+				</app-custom-icon>
+				<p
+					class="text-preset-4"
+					[class]="isTagActive(tag) ? 'text-blue-600' : 'text-neutral-700'"
+				>
+					{{ tag }}
+				</p>
+			</div>
+			} @empty {
+			<div class="px-[12px] py-[8px]">
+				<p class="text-preset-5 text-neutral-400">No tags yet</p>
+			</div>
+			}
+		</div>
+	</div>
+</div>

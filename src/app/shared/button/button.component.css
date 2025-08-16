@@ -1,0 +1,22 @@
+.btn-base {
+	transition: all 0.2s ease;
+	cursor: pointer;
+	outline: none;
+}
+
+.btn-base:hover:not(:disabled) {
+	opacity: 0.9;
+}
+
+.btn-base:active:not(:disabled) {
+	opacity: 0.75;
+}
+
+.btn-base:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.btn-base:focus {
+	box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}

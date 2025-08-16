@@ -1,0 +1,36 @@
+<div class="fixed inset-0 flex items-center justify-center">
+	<div class="absolute inset-0 bg-neutral-950 opacity-60" (click)="onCancel()"></div>
+
+	<div
+		class="relative bg-white rounded-[12px] w-full max-w-md z-10"
+		(click)="$event.stopPropagation()"
+	>
+		<div class="flex items-center justify-center p-[20px] gap-[16px]">
+			<div
+				class="bg-neutral-100 rounded-[8px] w-[40px] h-[40px] flex items-center justify-center"
+			>
+				<app-custom-icon
+					[iconName]="iconName"
+					[size]="24"
+					color="text-neutral-950"
+				></app-custom-icon>
+			</div>
+			<div class="flex flex-col items-start flex-1 gap-[6px]">
+				<p class="text-preset-3 text-neutral-950">{{ modalTitle }}</p>
+				<p class="text-preset-5 text-neutral-700">{{ modalMessage }}</p>
+			</div>
+		</div>
+
+		<div class="flex justify-end gap-[16px] py-[12px] px-[20px]">
+			<button
+				(click)="onCancel()"
+				class="px-[16px] py-[12px] rounded-[8px] hover:bg-gray-300 bg-neutral-100"
+			>
+				<p class="text-preset-4 text-color-neutral-600">{{ cancelLabel }}</p>
+			</button>
+			<button (click)="onConfirm()" [class]="getConfirmClasses()">
+				<p class="text-preset-4 text-white">{{ confirmLabel }}</p>
+			</button>
+		</div>
+	</div>
+</div>
