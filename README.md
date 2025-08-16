@@ -1,59 +1,61 @@
-# MyApp
+# Notes Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+An MVP of a Notes Management System with the most importants functionalities. Frontend only, uses localStorage for store data.
 
-## Development server
+## Implemented Features
 
-To start a local development server, run:
+-  Login and SignUp
+-  Display all the Notes
+-  Navigate through each Note
+-  Create, edit and delete notes
+-  Archive and Unarchive Notes
+-  Filter Notes by Tags
+-  Filter Notes by Archived status
 
-```bash
-ng serve
-```
+## Technologies Used
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+-  **Angular** - Main framework
+-  **TypeScript** - Programming language
+-  **Node.js** - Runtime enviroment
+-  **Tailwind CSS** - Styling framework
 
-## Code scaffolding
+## Installation and Setup
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Prerequisites
 
-```bash
-ng generate component component-name
-```
+Make sure you have installed:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+-  [Node.js](https://nodejs.org/) (version 18 or higher)
+-  [Angular CLI](https://angular.io/cli) globally
 
 ```bash
-ng build
+npm install -g @angular/cli
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Steps to run the project
 
-## Running unit tests
+1. **Clone the repository:**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+   ```bash
+   git clone https://github.com/adrian-lucas/notes-manager.git
+   cd notes-manager
+   ```
 
-```bash
-ng test
-```
+2. **Install dependencies:**
 
-## Running end-to-end tests
+   ```bash
+   npm install
+   ```
 
-For end-to-end (e2e) testing, run:
+3. **Run the application:**
 
-```bash
-ng e2e
-```
+   ```bash
+   ng serve
+   ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+4. **Open in browser:**
+   Navigate to `http://localhost:4200/`
 
-## Additional Resources
+## Author
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Adrian Lucas** - [GitHub](https://github.com/adrian-lucas)
